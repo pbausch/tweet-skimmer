@@ -1,7 +1,4 @@
 var express = require('express');
-var fs = require('fs');
-var rp = require('request-promise');
-var cheerio = require('cheerio');
 var RSS = require('rss');
 var url = require('url');
 var twitter = require('twitter');
