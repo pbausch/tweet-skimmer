@@ -1,0 +1,14 @@
+{
+  "name"         : "tweet-skimmer",
+  "version"      : "0.0.1",
+  "description"  : "Scraping your way to twitter user rss feeds",
+  "main"         : "server.js",
+  "author"       : "Paul Bausch",
+  "dependencies" : {
+    "express"    : "latest",
+    "request-promise"    : "latest",
+    "cheerio"    : "latest",
+    "rss"        : "latest",
+    "twitter"    : "latest"
+  }
+}
