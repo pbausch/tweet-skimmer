@@ -37,11 +37,13 @@ app.get('/timeline', function(req, res) {
 						post_desc = post_desc.replace(urls[j]['url'],'<a href="'+urls[j]['expanded_url']+'">'+urls[j]['display_url']+'</a>');
 					}
 					var is_reply = tweet['in_reply_to_status_id'];
+					var post_date = tweet['created_at'];
 					if (is_reply === null) {
 						feed.item({
 							title: post_title,
 							description: post_desc,
-							url: post_url
+							url: post_url,
+							date: post_date
 						});
 					}
 
