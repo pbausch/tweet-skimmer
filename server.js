@@ -38,7 +38,7 @@ app.get('/timeline', function(req, res) {
 					}
 					var is_reply = tweet['in_reply_to_status_id'];
 					var post_date = tweet['created_at'];
-					if (is_reply === null) {
+					if ((is_reply === null) && (!tweet['retweeted_status'])) {
 						feed.item({
 							title: post_title,
 							description: post_desc,
