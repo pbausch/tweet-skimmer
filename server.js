@@ -35,6 +35,10 @@ app.get('/timeline', function(req, res) {
 					var post_title = 'tweet by ' + user;
 					var post_url = 'https://twitter.com' + data.find('.time').find('a').attr('href');
 					var post_desc = data.find('.tweet-text').html();
+					var media = data.find('.AdaptiveMedia-photoContainer').html();
+					if (media) {
+						post_desc = post_desc + '<br><br>' + media.replace(/style="[^"]+"/g,"style='max-width:100%;height:auto;'");
+					}
 					var has_retweet_text = data.find('.js-retweet-text');
 					var post_date = data.find('.js-short-timestamp').attr('data-time-ms');
 					if ((typeof post_date != 'undefined') && (post_desc !== '') && (has_retweet_text.length == 0)) {
